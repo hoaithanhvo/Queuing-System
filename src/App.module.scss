@@ -1,0 +1,111 @@
+.container {
+  width: 1440px;
+  height: 810px;
+  margin: 0 auto;
+
+  //   background-color: red;
+  border: 1px solid black;
+  display: flex;
+  .item1 {
+    width: 592px;
+    height: 100%;
+    background-color: #f6f6f6;
+
+    .box {
+      //   background-color: red;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      //   align-items: center;
+      flex-direction: column;
+      //   align-items: center;
+      position: relative;
+      width: 400px;
+
+      //   text-align: right;
+      p:first-child {
+        margin-top: 84px;
+      }
+      p {
+        // margin-top: 84px;
+        color: black;
+        font-size: 18px;
+        // font-weight: bold;
+        line-height: 27px;
+      }
+      .LogoAlta {
+        margin: 0 auto;
+        width: 170px;
+        height: 136px;
+        margin-top: 82px;
+      }
+      .input {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        .Eyes {
+          width: 17px;
+          height: 17px;
+          position: absolute;
+          top: 50%;
+          right: 5px; /* Khoảng cách từ bên phải */
+          transform: translate(0, -50%);
+          cursor: pointer;
+        }
+      }
+      input {
+        border: 1.5px solid #d4d4d7;
+        padding-left: 8px;
+        font-size: 17px;
+        width: 400px;
+        height: 44px;
+        // border-top: #d4d4d7;
+        border-radius: 8px;
+        // border-color: #d4d4d7;
+      }
+      .forgotPassword {
+        color: red;
+        font-size: 14px;
+      }
+      .button {
+        border: none;
+        // border-color: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0 auto;
+        width: 162px;
+        height: 50px;
+        background-color: #ff9138;
+        // margin-bottom: 259px;
+      }
+      .button:hover,
+      .forgotPassword:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .item2 {
+    display: flex;
+    flex-direction: column;
+    width: 848px;
+    position: relative;
+    .ImageManager {
+      width: 605px;
+      height: 614px;
+      margin: 112px 164px 83px 79px;
+    }
+    p {
+      font-size: 34px;
+      //   counter-reset: ;
+    }
+    .box2 {
+      top: 407px;
+      left: 445px;
+      position: absolute;
+    }
+  }
+}
