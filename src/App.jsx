@@ -90,7 +90,7 @@ function App() {
           <h1>QUẢN LÝ XẾP HÀNG</h1>
         </div>
 
-        {/* <Link to="/home" > to </Link> */}
+        <Link to="/home" > to </Link>
       </div>
     </div>
   );
