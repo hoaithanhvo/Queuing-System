@@ -3,13 +3,15 @@ import styles from "./App.module.scss"
 import LogoAlta from "./images/Logo alta.png"
 import Eyes from "./images/Vector.png"
 import ImageManager from "./images/Group 341.png"
+
 import { Link } from 'react-router-dom';
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword1, setShowPassword1] = useState(true);
-  const [change, setChange] = useState(0)
+
+  const [change, setChange] = useState(false)
   const [errorMessage, setErrorMessage] = useState('');
 
   const loginData = [
@@ -21,28 +23,23 @@ function App() {
   localStorage.setItem('loginData', JSON.stringify(loginData));
 
   const handleLogin = () => {
-    // Lấy dữ liệu từ Local Storage (nếu có)
     const storedData = JSON.parse(localStorage.getItem('loginData')) || [];
 
-    // Kiểm tra xem tài khoản và mật khẩu có khớp với dữ liệu lưu trữ hay không
     const found = storedData.find(item => item.username === username && item.password === password);
 
     if (found) {
       // <Link to ="/home">
-      // Đúng tài khoản và mật khẩu
-
-      setChange(prevChange => prevChange + 1);
+      setChange(!change)
+      // setChange(prevChange => prevChange + 1);
       alert('Đăng nhập thành công!');
     } else {
-      // Sai tài khoản hoặc mật khẩu
       setShowPassword1(false)
       setErrorMessage('Tài khoản hoặc mật khẩu không đúng!');
     }
   };
   useEffect(() => {
-    if (change >= 1) {
-      window.location.href = '/home';
-    }
+    // window.location.reload();
+
   }, [change]);
   console.log(change);
   return (
@@ -75,8 +72,17 @@ function App() {
           </div>
 
           <p className={styles.forgotPassword}> {showPassword1 ? "Quên mật khẩu " : errorMessage}</p>
+
           <button className={styles.button} onClick={handleLogin}>
-            Đăng nhập
+            {change ? (
+              <Link to="/home" className={styles.button}>
+                Đăng nhập
+              </Link>
+            ) : (
+              <Link to="/" className={styles.button}>
+                Đăng nhập
+              </Link>
+            )}
           </button>
           <p style={{ textAlign: "center", fontSize: "14px", color: "red" }}> {showPassword1 ? "" : "Quên mật khẩu"}</p>
 
