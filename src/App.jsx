@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from "./App.module.scss"
 import LogoAlta from "./images/Logo alta.png"
 import Eyes from "./images/Vector.png"
@@ -71,7 +71,7 @@ function App() {
             />
           </div>
 
-          <p className={styles.forgotPassword}> {showPassword1 ? "Quên mật khẩu " : errorMessage}</p>
+          <p className={styles.forgotPassword}> {showPassword1 ? <Link style={{ color: "red", textDecoration: "none" }} to="/ForgotPassword">Quên mật khẩu?</Link> : errorMessage}</p>
 
           <button className={styles.button} onClick={handleLogin}>
             {change ? (
@@ -84,7 +84,7 @@ function App() {
               </Link>
             )}
           </button>
-          <p style={{ textAlign: "center", fontSize: "14px", color: "red" }}> {showPassword1 ? "" : "Quên mật khẩu"}</p>
+          <p style={{ textDecoration: "none", textAlign: "center", fontSize: "14px", color: "red" }}> {showPassword1 ? "" : <Link style={{ textDecoration: "none", color: "red" }} to="/ForgotPassword">Quên mật khẩu</Link>}</p>
 
 
         </div>

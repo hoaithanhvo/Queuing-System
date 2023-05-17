@@ -1,21 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-// import { useHistory } from 'react-router-dom';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Name from "./Components/Name.jsx"
-import '@fortawesome/fontawesome-free/css/all.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import App from './App.jsx';
+import ResetPassword from './Components/ResetPassword.jsx';
+import Name from './Components/Name.jsx';
+import ForgotPassword from './Components/ForgotPassword.jsx';
+import NavBar from './Components/Navbar.jsx'; // Assuming you have a NavBar component
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} ></Route>
-        <Route path='home' element={<Name />} ></Route>
+        <Route
+          path="/"
+          element={
+            <React.Fragment>
+              {/* <NavBar /> Render the NavBar component only for the home page */}
+              <App />
+            </React.Fragment>
+          }
+        />
+        <Route path="home" element={<React.Fragment>
+          <NavBar /> Render the NavBar component only for the home page
+          <div>d</div>
+          {/* <App /> */}
+        </React.Fragment>} />
+        <Route path="/Forgotpassword" element={<ForgotPassword />} />
+        <Route path="Forgotpassword/resetPassword" element={<ResetPassword />} />
       </Routes>
-
-
-      {/* <App /> */}
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
