@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App.jsx';
 import ResetPassword from './Components/ResetPassword.jsx';
 import Name from './Components/Name.jsx';
+// import Home from "./Components/Home.jsx";
 import ForgotPassword from './Components/ForgotPassword.jsx';
 import NavBar from './Components/Navbar.jsx'; // Assuming you have a NavBar component
 
@@ -21,8 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           }
         />
         <Route path="home" element={<React.Fragment>
-          <NavBar /> Render the NavBar component only for the home page
+          <NavBar />
           <div>d</div>
+          <Name />
           {/* <App /> */}
         </React.Fragment>} />
         <Route path="/Forgotpassword" element={<ForgotPassword />} />

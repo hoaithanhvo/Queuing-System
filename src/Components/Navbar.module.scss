@@ -1,0 +1,40 @@
+.container {
+  width: 200px;
+  height: 810px;
+  //   margin: 0 auto;
+  background-color: gold;
+  .image {
+    display: flex;
+    // margin: 0 auto;
+    margin-bottom: 55px;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .item {
+      background-color: #ff7506;
+      //   margin-top: 55px;
+      width: 200px;
+      height: 48px;
+      display: flex;
+
+      // justify-content: center;
+      align-items: center;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 16px;
+      }
+      li {
+        margin-left: 10px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        color: white;
+        list-style: none;
+      }
+    }
+  }
+}
