@@ -1,67 +1,61 @@
-import { useState, useEffect } from 'react';
-import styles from "./App.module.scss"
-import LogoAlta from "./images/Logo alta.png"
-import Eyes from "./images/Vector.png"
-import ImageManager from "./images/Group 341.png"
+import { useState } from 'react';
+import styles from './App.module.scss';
+import LogoAlta from './images/Logo alta.png';
+import Eyes from './images/Vector.png';
+import ImageManager from './images/Group 341.png';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
+const loginData = [
+  { username: '123', password: '123' },
+  { username: 'user2', password: 'password2' },
+  { username: 'user3', password: 'password3' },
+];
+
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [showPassword1, setShowPassword1] = useState(true);
+  const [showPassword, setShowPassword] = useState(true);
+  const [forgot, setForgot] = useState(true);
 
-  const [change, setChange] = useState(false)
+  const [showPassword1, setShowPassword1] = useState(false);
+
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
-  const loginData = [
-    { username: '123', password: '123' },
-    { username: 'user2', password: 'password2' },
-    { username: 'user3', password: 'password3' },
-  ];
+  const handleLogin1 = (e) => {
+    e.preventDefault();
 
-  localStorage.setItem('loginData', JSON.stringify(loginData));
-
-  const handleLogin = () => {
-    const storedData = JSON.parse(localStorage.getItem('loginData')) || [];
-
-    const found = storedData.find(item => item.username === username && item.password === password);
+    const found = loginData.find((item) => item.username === username && item.password === password);
 
     if (found) {
-      // <Link to ="/home">
-      setChange(!change)
-      // setChange(prevChange => prevChange + 1);
-      alert('Đăng nhập thành công!');
+      navigate('/Trang-Chu/Dashboard');
     } else {
-      setShowPassword1(false)
-      setErrorMessage('Tài khoản hoặc mật khẩu không đúng!');
+      setShowPassword1(true)
+      setForgot(false)
+      setErrorMessage('Sai mật khẩu hoặc tên đăng nhập');
     }
   };
-  useEffect(() => {
-    // window.location.reload();
 
-  }, [change]);
-  console.log(change);
   return (
     <div className={styles.container}>
-      <div className={styles.item1}>
+      <form onSubmit={handleLogin1} className={styles.item1}>
         <div className={styles.box}>
           <img className={styles.LogoAlta} src={LogoAlta} alt="Mô tả hình ảnh" />
-          <p style={{ marginTop: "84px", marginBottom: "4px" }}>Tên đăng nhập *</p>
+          <p style={{ marginTop: '84px', marginBottom: '4px' }}>Tên đăng nhập *</p>
           <input
             placeholder="Nhập tài khoản"
             type="text"
             value={username}
-            onChange={e => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
           ></input>
-          <p style={{ marginBottom: "4px" }}>Mật khẩu *</p>
+          <p style={{ marginBottom: '4px' }}>Mật khẩu *</p>
           <div className={styles.input}>
             <input
               className={styles.forgotPassword1}
               placeholder="Nhập mật khẩu"
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             ></input>
             <img
               className={styles.Eyes}
@@ -70,35 +64,26 @@ function App() {
               onClick={() => setShowPassword(!showPassword)}
             />
           </div>
-
-          <p className={styles.forgotPassword}> {showPassword1 ? <Link style={{ color: "red", textDecoration: "none" }} to="/ForgotPassword">Quên mật khẩu?</Link> : errorMessage}</p>
-
-          <button className={styles.button} onClick={handleLogin}>
-            {change ? (
-              <Link to="/home" className={styles.button}>
-                Đăng nhập
-              </Link>
-            ) : (
-              <Link to="/" className={styles.button}>
-                Đăng nhập
-              </Link>
-            )}
-          </button>
-          <p style={{ textDecoration: "none", textAlign: "center", fontSize: "14px", color: "red" }}> {showPassword1 ? "" : <Link style={{ textDecoration: "none", color: "red" }} to="/ForgotPassword">Quên mật khẩu</Link>}</p>
-
-
+          <p style={{ textDecoration: 'none', fontSize: '14px', color: 'red' }}>
+            {' '}
+            {showPassword1 ? errorMessage : "Quên mật khẩu"}
+          </p>
+          <button type="submit">Đăng nhập</button>
+          <p style={{ textDecoration: 'none', textAlign: 'center', fontSize: '14px', color: 'red' }}>
+            {' '}
+            {forgot ? '' : <Link style={{ textDecoration: 'none', color: 'red' }} to="/ForgotPassword">Quên mật khẩu</Link>}
+          </p>
         </div>
-      </div>
+      </form>
       <div className={styles.item2}>
         <img className={styles.ImageManager} src={ImageManager} alt="Mô tả hình ảnh" />
         <div className={styles.box2}>
           <p>Hệ thống </p>
           <h1>QUẢN LÝ XẾP HÀNG</h1>
         </div>
-
-        <Link to="/home" > to </Link>
       </div>
     </div>
   );
 }
+
 export default App;

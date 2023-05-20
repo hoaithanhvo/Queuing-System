@@ -3,9 +3,9 @@
 // import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import Eyes from "../images/Vector.png"
-import ImageManager from "../images/Frame.png"
+import ImageManager from "../../images/Frame.png"
 
-import LogoAlta from "../images/Logo alta.png"
+import LogoAlta from "../../images/Logo alta.png"
 import styles from "./ForgotPassword.module.scss"
 const ForgotPassword = () => {
     return (

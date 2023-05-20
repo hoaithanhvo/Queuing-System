@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './App.module.scss';
-import LogoAlta from './images/Logo alta.png';
-import Eyes from './images/Vector.png';
-import ImageManager from './images/Group 341.png';
+import styles from '../App.module.scss';
+import LogoAlta from '../images/Logo alta.png';
+import Eyes from '../images/Vector.png';
+import ImageManager from '../images/Group 341.png';
 
 function App() {
     const [username, setUsername] = useState('');

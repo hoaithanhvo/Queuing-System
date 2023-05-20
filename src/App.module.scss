@@ -73,11 +73,9 @@
         font-size: 14px;
         text-decoration: none;
       }
-      .button {
+      button {
         text-decoration: none;
-
         border: none;
-        // border-color: none;
         border-radius: 8px;
         color: white;
         font-size: 16px;
@@ -87,7 +85,7 @@
         width: 162px;
         height: 50px;
         background-color: #ff9138;
-        // margin-bottom: 259px;
+        margin-top: 52px;
       }
       .button:hover,
       .forgotPassword:hover {

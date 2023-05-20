@@ -2,9 +2,9 @@
 import { useState } from "react";
 import styles from "./ResetPassword.module.scss"
 import { Link } from 'react-router-dom';
-import ImageManager from "../images/Frame.png"
-import Eyes from "../images/Vector.png"
-import LogoAlta from "../images/Logo alta.png"
+import ImageManager from "../../images/Frame.png"
+import Eyes from "../../images/Vector.png"
+import LogoAlta from "../../images/Logo alta.png"
 const ResetPassword = () => {
     const [showPassword1, setShowPassword1] = useState(false)
     const [showPassword2, setShowPassword2] = useState(false)

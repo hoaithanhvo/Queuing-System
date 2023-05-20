@@ -1,40 +1,63 @@
-.container {
-  width: 200px;
-  height: 810px;
-  //   margin: 0 auto;
-  background-color: gold;
-  .image {
-    display: flex;
-    // margin: 0 auto;
-    margin-bottom: 55px;
-  }
-  .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .item {
-      background-color: #ff7506;
-      //   margin-top: 55px;
-      width: 200px;
-      height: 48px;
+.main {
+  display: flex;
+  .container {
+    width: 200px;
+    height: 810px;
+    background-color: white;
+    .img {
+      width: 80px;
+      height: 64px;
       display: flex;
+      margin: 0 auto;
+      margin-top: 32px;
+      margin-bottom: 58px;
+    }
 
-      // justify-content: center;
-      align-items: center;
-      img {
-        width: 20px;
-        height: 20px;
-        margin-left: 16px;
-      }
-      li {
-        margin-left: 10px;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 700;
+    .box {
+      display: flex;
+      flex-direction: column;
+      .activeLink {
+        background-color: #ff7506;
+        width: 200px;
+        height: 48px;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
         color: white;
-        list-style: none;
+        text-decoration: none;
+        .icon {
+          width: 20px;
+          color: azure;
+
+          height: 20px;
+          margin-left: 20px;
+          margin-right: 8px;
+        }
+      }
+      .link {
+        text-decoration: none;
+
+        width: 200px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        color: #7e7d88;
+
+        .icon {
+          // background-color: #7e7d88;
+          color: red;
+          // border: 1px solid #7e7d88;
+          // color: white;
+          width: 20px;
+          height: 20px;
+          margin-right: 8px;
+          margin-left: 20px;
+        }
       }
     }
+  }
+  .outlet {
+    width: 1240px;
+    background-color: red;
   }
 }
