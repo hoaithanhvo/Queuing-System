@@ -7,10 +7,15 @@ import DichVu from './Components/DichVu/DichVu.jsx';
 import CapSo from './Components/CapSo/CapSo.jsx';
 import BaoCao from './Components/BaoCao/BaoCao.jsx';
 import Device from "./Components/Device/Device.jsx"
+import Infomation from "./Components/Infomation/Information.jsx"
+
+// import Setting from './Components/CaiDatHeThong/Setting.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import ForgotPassword from './Components/ForgotPassword/ForgotPassword.jsx';
 import NavBar from './Components/Navbar.jsx'; // Assuming you have a NavBar component
-
+import QuanLyVaiTro from './Components/CaiDatHeThong/QuanLyVaiTro/QuanLyVaiTro.jsx';
+import QuanLyTaiKhoan from './Components/CaiDatHeThong/QuanLyTaiKhoan/QuanLyTaiKhoan.jsx';
+import NhatKyNguoiDung from './Components/CaiDatHeThong/NhatKyNguoiDung/NhatKyNguoiDung.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -36,6 +41,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='DichVu' element={<DichVu />} />
           <Route path='CapSo' element={<CapSo />} />
           <Route path='BaoCao' element={<BaoCao />} />
+          <Route path='CaiDatHeThong' >
+            <Route path='QuanLyVaiTro' element={<QuanLyVaiTro />}></Route>
+            <Route path='QuanLyTaiKhoan' element={<QuanLyTaiKhoan />}></Route>
+            <Route path='NhatKyNguoiDung' element={<NhatKyNguoiDung />}></Route>
+          </Route>
+          <Route path='Thongtincanhan' element={<Infomation />} />
+
+
 
         </Route>
         <Route path="/Forgotpassword" element={<ForgotPassword />} />

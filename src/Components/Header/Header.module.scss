@@ -1,0 +1,26 @@
+.container {
+  background-color: aqua;
+  height: 88px;
+  display: grid;
+  grid-template-columns: 840px 400px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    .img {
+      margin-left: 109px;
+      width: 32px;
+      height: 32px;
+    }
+    .box {
+      text-decoration: none;
+      color: black;
+      margin-left: 24px;
+      width: 180px;
+      height: 42px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}

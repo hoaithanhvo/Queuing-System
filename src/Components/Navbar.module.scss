@@ -1,9 +1,21 @@
 .main {
-  display: flex;
+  border: 1px solid black;
+  max-width: 1440px;
+  display: grid;
+  margin: 0 auto;
+  // grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  .body {
+    display: grid;
+    // grid-template-columns: ;
+    grid-template-rows: 88px;
+  }
+  // justify-content: center;
   .container {
     width: 200px;
     height: 810px;
-    background-color: white;
+    // background-color: red;
+    // background-color: white;
     .img {
       width: 80px;
       height: 64px;
@@ -15,6 +27,9 @@
 
     .box {
       display: flex;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
       flex-direction: column;
       .activeLink {
         background-color: #ff7506;
@@ -32,6 +47,22 @@
           height: 20px;
           margin-left: 20px;
           margin-right: 8px;
+
+          .item2 {
+            height: 48px;
+            // color: white;
+            .chilrent {
+              width: 100%;
+              border: 1px solid red;
+              // height: 168px;
+              background-color: red;
+              text-decoration: none;
+              color: #7e7d88;
+              height: 88px;
+              // display: flex;
+              background-color: white;
+            }
+          }
         }
       }
       .link {
@@ -40,6 +71,7 @@
         width: 200px;
         height: 48px;
         display: flex;
+        // justify-content: space-between;
         align-items: center;
         color: #7e7d88;
 
@@ -54,8 +86,124 @@
           margin-left: 20px;
         }
       }
+
+      .button {
+        margin: 0 auto;
+        border: none;
+        border-radius: 8px;
+        color: #ff7506;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        // margin-top: 276px;
+        width: 176px;
+        background-color: #fff2e7;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          margin-right: 12px;
+          // margin: 0 auto;
+        }
+      }
+      .button:hover {
+        cursor: pointer;
+      }
+      .cha {
+        padding-left: 20px;
+        background-color: #ff7506;
+        position: relative;
+        text-decoration: none;
+        color: white;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .con {
+          border-radius: 8px;
+          background-color: white;
+          width: 200px;
+          top: 0;
+          left: 200px;
+          position: absolute;
+          opacity: 0;
+          .name {
+            .activeLink1 {
+              padding-left: 20px;
+              background-color: #ff9138;
+              width: 180px;
+              height: 48px;
+              display: flex;
+              // justify-content: center;
+              align-items: center;
+              color: white;
+              // border-radius: 8px;
+              text-decoration: none;
+            }
+
+            .link {
+              padding-left: 20px;
+            }
+            .link:hover {
+              color: #ff7506;
+            }
+          }
+        }
+      }
+      .no {
+        padding-left: 20px;
+        position: relative;
+        text-decoration: none;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #7e7d88;
+        .con {
+          background-color: white;
+          width: 200px;
+          top: 0;
+          left: 200px;
+          position: absolute;
+          opacity: 0;
+          .name {
+            // padding-left: 20px;
+            .link {
+              padding-left: 20px;
+              // background-color: #ff9138;
+              width: 180px;
+              height: 48px;
+              display: flex;
+              // justify-content: center;
+              align-items: center;
+              color: #7e7d88;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .no:hover,
+      .name:hover {
+        background-color: #fff2e7;
+        color: #ff9138;
+        border-radius: 8px;
+        // padding-left: 10px;
+      }
+      .activeLink1:hover .name:hover {
+        color: #ff7506;
+        border-radius: 8px;
+      }
+      .cha:hover .con {
+        // background-color: red;
+        opacity: 1;
+      }
+      .no:hover .con {
+        opacity: 1;
+      }
     }
   }
+
   .outlet {
     width: 1240px;
     background-color: red;
